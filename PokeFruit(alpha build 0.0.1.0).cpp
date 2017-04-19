@@ -20,7 +20,7 @@ private:
     void update(sf::Time);
     void render();
     void handlePlayerInput(sf::Keyboard::Key, bool);
-private:
+
     sf::RenderWindow mWindow;
     sf::Texture mBG;
     sf::Sprite BG;
@@ -92,11 +92,11 @@ Game::Game():mWindow(sf::VideoMode(480, 640), "POKEFRUIT!"){
     NEXT[2].setTexture(mNEXT[2]);
     NEXT[2].setPosition(0.f, 0.f);
     if (!buffer.loadFromFile("music/main.ogg")){
-    cout<<"No Music"<<endl;
+        cout<<"No Music"<<endl;
     }
     sound.setBuffer(buffer);
     if (!bufferm.loadFromFile("music/menu.ogg")){
-    cout<<"No Music"<<endl;
+        cout<<"No Music"<<endl;
     }
     soundm.setBuffer(bufferm);
     soundm.setPlayingOffset(sf::seconds(53));
@@ -321,8 +321,8 @@ void Game::processEvents(){
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed){
     if(duwa){
         if(!isPressed){
-        source.x = 0;
-        source.y = 0;
+            source.x = 0;
+            source.y = 0;
         }
         if(key == sf::Keyboard::A){
             mIsMovingLeft = isPressed;
